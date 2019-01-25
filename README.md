@@ -20,5 +20,5 @@ AWS マネージメントコンソールのナビゲーションバーをリー�
 4. 各リージョン (ドメイン名で判定) 用の CSS を作成: リージョン名を表す色相を CSS hsl に適用する
 
 ```console
-$ pbpaste | grep -E '[1-9]$' | xargs -I{} sh -c 'printf "%s\t%s" "{}"; echo "obase=10;ibase=16;$(echo "{}" | md5 | tr "[a-f]" "[A-F]") % 168" | bc' | awk '{print "@-moz-document domain(" $1 ".console.aws.amazon.com) { body #awsgnav #nav-menubar, body #awsgnav #nav-menubar .nav-menu, #nav-menu-right { background-color: hsl(" $2 ", 50%, 50%); } }" }' > dist.css
+$ pbpaste | grep -E '[1-9]$' | xargs -I{} sh -c 'printf "%s\t%s" "{}"; echo "obase=10;ibase=16;$(echo "{}" | md5 | tr "[a-f]" "[A-F]") % 168" | bc' | awk '{print "@-moz-document domain(" $1 ".console.aws.amazon.com) { body #awsgnav #nav-menubar, body #awsgnav #nav-menubar .nav-menu, #nav-menu-right { background-color: hsl(" $2 ", 50%, 30%); } }" }' > dist.css
 ```
